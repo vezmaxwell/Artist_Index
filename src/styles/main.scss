@@ -1,0 +1,42 @@
+$vividpink: rgb(216, 47, 139);
+$lightpink: rgba(216, 47, 139, 0.5);
+$page: rgb(32,37,41);
+
+.site-wrapper {
+  min-height: 100vh;
+  background-color: $page
+}
+
+.home-page-title{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color:rgb(216, 47, 139);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.navbar {
+  background-color: black;
+  .navbar-brand {
+    .fa-record-vinyl{
+      color:rgb(216, 47, 139)
+    }
+  }
+  .nav-item {
+    margin-left: 10px;
+    a,
+    span {
+      text-decoration: none;
+      cursor: pointer;
+      color: rgb(216, 47, 139)
+    }
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
