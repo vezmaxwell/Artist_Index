@@ -9,12 +9,15 @@ const Navbar = () => {
       <div className="container">
         {/*Logo*/}
         <div className="navbar-brand">
-          <i className="fas fa-record-vinyl"></i>
+          <Link to="/"><i className="fas fa-record-vinyl"></i></Link>
         </div>
         {/* Nav Bar */}
         <ul className="navbar-nav">
           <li className="nav-item">
-            <Link to="/">About</Link>
+            <Link to="/about">About</Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/charts">View Charts</Link>
           </li>
         </ul>
       </div>
