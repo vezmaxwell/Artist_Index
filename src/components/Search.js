@@ -13,24 +13,27 @@ const Search = () => {
 
   const [ hasError, setHasError ] = useState(false)
   
-  
-  useEffect(() => {
-    if (!searchTerm) return
-    if (searchTerm) {
-      const getArtist = async () => {
-        try {
-          const { data } = await axios(
-            `https://theaudiodb.com/api/v1/json/1/search.php?s=${searchTerm}`
-          )
-          setArtist(data.artists[0])
-        } catch (err) {
-          console.log('error')
-        }
-      }
-      getArtist()
+  const getArtist = async (searchTerm) => {
+    try {
+      const { data } = await axios(
+        `https://theaudiodb.com/api/v1/json/1/search.php?s=${searchTerm}`
+      )
+      setArtist(data.artists[0])
+    } catch (err) {
+      console.log('error')
     }
-  }, [searchTerm, history])
+  }
 
+  const getAlbums = async (searchTerm) => {
+    try {
+      const { data } = await axios(
+        `theaudiodb.com/api/v1/json/1/discography.php?s=${searchTerm}`
+      )
+      setAlbums(data.album)
+    } catch (err) {
+      console.log('error')
+    }
+  }
 
   const handleChange = async (event) => {
     if (event.target.value.includes(' ')){
@@ -40,19 +43,11 @@ const Search = () => {
   }
 
   useEffect(() => {
-    if (searchTerm) {
-      const getAlbums = async () => {
-        try {
-          const { data } = await axios(
-            `theaudiodb.com/api/v1/json/1/discography.php?s=${searchTerm}`
-          )
-          setAlbums(data.album)
-        } catch (err) {
-          console.log('error')
-        }
-      }
-      getAlbums()
-    }
+    searchTerm && getArtist(searchTerm)
+  }, [searchTerm, history])
+
+  useEffect(() => {
+    searchTerm && getAlbums(searchTerm)
   }, [artist, history, searchTerm])
 
 
