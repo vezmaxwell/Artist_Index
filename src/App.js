@@ -3,7 +3,7 @@ import { BrowserRouter, Link, Switch, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Search from './components/Search'
-import Charts from './components/Charts'
+import Error from './components/Error'
 
 function App() {
   return (
@@ -17,8 +17,8 @@ function App() {
           <Route exact path="/search">
             <Search />
           </Route>
-          <Route exact path="/charts">
-            <Charts />
+          <Route exact path="/error">
+            <Error />
           </Route>
         </Switch>
       </BrowserRouter>

@@ -7,8 +7,24 @@ $page: rgb(32, 37, 41);
 }
 .site-wrapper {
   min-height: 100vh;
-  //
   background-color: black;
+  // background-image: url("../images/sort.gif");
+  // background-blend-mode: multiply;
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // color: black;
+}
+// .search-background {
+//   background-image: url("../images/sort.gif");
+//   background-repeat: no-repeat;
+//   background-size: cover;
+// }
+
+.record-player {
+  display: flex;
+  margin: 0 auto;
+  width: 35vh;
+  margin-top: 70px;
 }
 .search-title {
   color: $vividpink;
@@ -54,6 +70,11 @@ input {
   //
   padding: 30vh 0vh 9vh 5vh;
   text-align: justify;
+  p {
+    background-color: $page;
+    padding: 30px;
+    border-radius: 25px;
+  }
 }
 .artist-pic {
   height: 50vh;
@@ -78,7 +99,11 @@ input {
     transition: 0.4s ease-in-out;
   }
 }
+h1 {
+  font-family: "Lilita One", cursive;
+}
 .home-page-title {
+  font-family: "Lilita One", cursive;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -89,6 +114,7 @@ input {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  margin-top: 30px;
 }
 .navbar {
   background-color: $page;
@@ -108,5 +134,40 @@ input {
     &:hover {
       text-decoration: underline;
     }
+  }
+}
+
+.error-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  margin-top: 250px;
+  h2 {
+    margin-bottom: 15px;
+  }
+}
+
+.home-footer {
+  margin-top: 89vh;
+
+  // position: fixed;
+  hr {
+    color: rgb(216, 47, 139);
+    opacity: 1;
+  }
+  p {
+    text-align: center;
+  }
+}
+
+footer {
+  hr {
+    color: rgb(216, 47, 139);
+    opacity: 1;
+  }
+  p {
+    text-align: center;
   }
 }
