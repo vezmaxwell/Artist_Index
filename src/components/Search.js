@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link, useHistory } from 'react-router-dom'
 import spinner from '../images/spinner.gif'
+import beyonce from '../images/beyonce.gif'
 
 const Search = () => {
 
@@ -17,10 +18,9 @@ const Search = () => {
   // console.log(albumArray)
   
   const getArtist = async (searchTerm) => {
+    setArtist(null)
+    setAlbums(null)
     try {
-      if (searchTerm === '') {
-        setArtist(null)
-      }
       const { data } = await axios(
         `https://theaudiodb.com/api/v1/json/1/search.php?s=${searchTerm}`
       )
@@ -83,7 +83,7 @@ const Search = () => {
         <div className="container">
           {artist ?
             <>
-              <h2 className="artist-name">{artist.strArtist}</h2>
+              <h2 className="artist-name">{artist.strArtist.toUpperCase()}</h2>
               <div className="profile">
                 <div className="album-pos">
                   <img className="artist-pic" src={artist.strArtistThumb} />
@@ -115,8 +115,11 @@ const Search = () => {
             </>
             :
             <>
-              { hasError ? 
-                <h2>No Band Found....</h2>
+              { hasError ?
+                <div className="error-div">
+                  <h2 className="error-message">No Artist Found....</h2>
+                  <img src={beyonce} className="beyonce" />
+                </div>
                 :
                 <div className="spinner">
                   <img className="gif" src={spinner}/>

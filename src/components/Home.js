@@ -6,9 +6,9 @@ const Home = () => {
   return (
     <>
       <div className="container">
-        <img className="record-player"src={recordplayer}/>
+        
         <div className="home-page-title">
-          
+          <img className="record-player"src={recordplayer}/>
           <h1 className="display-4">
           ArtistIndex
           </h1>

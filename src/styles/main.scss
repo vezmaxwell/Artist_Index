@@ -25,7 +25,7 @@ $page: rgb(32, 37, 41);
   display: flex;
   margin: 0 auto;
   width: 35vh;
-  margin-top: 70px;
+  // margin-top: 70px;
 }
 .search-title {
   color: $vividpink;
@@ -44,12 +44,12 @@ $page: rgb(32, 37, 41);
 input {
   background-color: $lightpink;
   border: none;
-  color: white;
+  color: #f5cee3;
   border-radius: 10px;
   height: 3vh;
 }
 ::placeholder {
-  color: white;
+  color: #f5cee3;
   font-size: 25px;
 }
 .search {
@@ -72,8 +72,8 @@ input {
   padding: 30vh 0vh 9vh 5vh;
   text-align: justify;
   p {
-    background-color: $page;
-    padding: 30px;
+    background-color: rgba(32, 37, 41, 0.6);
+    padding: 35px;
     border-radius: 25px;
   }
 }
@@ -82,6 +82,7 @@ input {
   width: 50vh;
   //
   margin: 3vh 0vh 0vh 5vh;
+  border-radius: 25px;
 }
 .profile {
   display: flex;
@@ -91,8 +92,12 @@ input {
 .albums {
   display: flex;
   flex-direction: column;
-  margin-top: 35px;
+  margin-top: 45px;
   margin-left: 100px;
+  margin-bottom: 50px;
+  background-color: rgba(32, 37, 41, 0.6);
+  padding: 30px;
+  border-radius: 25px;
 }
 
 .album-title {
@@ -108,12 +113,12 @@ ul {
   padding: 10px;
   border-radius: 10px;
   text-decoration: none;
-  color: white;
+  color: #f5cee3;
+  transition: all 0.2s ease-in-out;
   &:hover {
     background-color: $lightpink;
     color: white;
     transform: scale(1.05);
-    transition: 0.4s ease-in-out;
   }
 }
 h1 {
@@ -160,7 +165,7 @@ h1 {
   justify-content: center;
   align-items: center;
   justify-items: center;
-  margin-top: 250px;
+  margin-top: 50px;
   h2 {
     margin-bottom: 15px;
   }
@@ -197,4 +202,10 @@ footer {
 
 .gif {
   width: 58px;
+}
+
+.error-message {
+  font-family: "Lilita One", cursive;
+  text-align: center;
+  margin-top: 250px;
 }
