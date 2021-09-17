@@ -1,6 +1,7 @@
 $vividpink: rgb(216, 47, 139);
 $lightpink: rgba(216, 47, 139, 0.5);
 $page: rgb(32, 37, 41);
+
 * {
   font-family: "Open Sans", sans-serif;
   color: rgb(216, 47, 139);
@@ -86,6 +87,22 @@ input {
   display: flex;
   justify-content: baseline;
 }
+
+.albums {
+  display: flex;
+  flex-direction: column;
+  margin-top: 35px;
+  margin-left: 100px;
+}
+
+.album-title {
+  font-family: "Lilita One", cursive;
+  // margin: 20px;
+}
+
+ul {
+  list-style-type: none;
+}
 .explore {
   background-color: $vividpink;
   padding: 10px;
@@ -170,4 +187,14 @@ footer {
   p {
     text-align: center;
   }
+}
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  margin-top: 250px;
+}
+
+.gif {
+  width: 58px;
 }
