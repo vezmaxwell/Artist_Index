@@ -14,9 +14,6 @@ const Search = () => {
 
   const [ hasError, setHasError ] = useState(false)
 
-  // const albumArray = albums[0]
-  // console.log(albumArray)
-  
   const getArtist = async (searchTerm) => {
     setArtist(null)
     setAlbums(null)
@@ -31,6 +28,7 @@ const Search = () => {
   }
 
   const getAlbums = async (searchTerm) => {
+    setAlbums(null)
     try {
       const { data } = await axios(
         `https://theaudiodb.com/api/v1/json/1/discography.php?s=${searchTerm}`
@@ -43,6 +41,7 @@ const Search = () => {
   }
 
   const handleChange = async (event) => {
+    setArtist(null)
     if (event.target.value.includes(' ')){
       ' ' === '_'
     }
@@ -52,14 +51,6 @@ const Search = () => {
     setSearchTerm(event.target.value)
   }
 
-  // const handleEnter = async (event) => {
-  //   if (event.code === 'Enter'){
-  //     handleChange()
-  //   }
-  //   return
-  // }
-
-
   useEffect(() => {
     searchTerm && getArtist(searchTerm)
   }, [searchTerm, history])
@@ -67,7 +58,6 @@ const Search = () => {
   useEffect(() => {
     searchTerm && getAlbums(searchTerm)
   }, [artist, history, searchTerm])
-
 
   return (
     <>
@@ -109,8 +99,6 @@ const Search = () => {
                     {artist.strBiographyEN}
                   </p>
                 </div>
-
-
               </div>
             </>
             :
@@ -128,10 +116,6 @@ const Search = () => {
             </>
           }
         </div>
-        {/* <footer>
-        <hr />
-        <p className="footer-text">&copy; Vez &amp; Dan 2021</p>
-      </footer> */}
       </div>
     </>
   )
