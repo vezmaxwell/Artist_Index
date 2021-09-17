@@ -6,7 +6,6 @@ const Home = () => {
   return (
     <>
       <div className="container">
-        
         <div className="home-page-title">
           <img className="record-player"src={recordplayer}/>
           <h1 className="display-4">
@@ -15,14 +14,7 @@ const Home = () => {
           <p className="lead">A catalogue of artists from across the globe!</p>
           <Link to="/search" className="explore">Explore Artists!</Link>
         </div>
-      
-
-
       </div>
-      {/* <footer className="home-footer">
-        <hr />
-        <p className="footer-text">&copy; Vez &amp; Dan 2021</p>
-      </footer> */}
     </>
   )
 }
