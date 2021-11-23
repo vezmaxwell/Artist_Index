@@ -32,6 +32,10 @@ Users are simply able to type in their desired artist and the page will display 
 - Font Awesome
 - Google Fonts
 
+## Planning
+
+We began by discussing a quick plan. We knew we wanted to create something music based, and spent a little while trying to find a good free music API to use. This proved to be fairly difficult. Once we settled on using the AudioDB API we decided on which features to include. We knew we wanted a live search bar, and chose which artist details we wanted to display.
+
 ## The Build
 
 As the project only lasted a few days, I'll highlight and explain some key features/functionality.
